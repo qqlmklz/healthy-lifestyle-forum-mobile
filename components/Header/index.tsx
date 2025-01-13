@@ -12,7 +12,7 @@ export const Header: FC = () => {
     <Wrapper>
       <View style={{ marginBottom: 35 }}>
         <Image
-          style={{ position: 'relative', top: 10, left: 205 }}
+          style={{ position: 'relative', top: 45, left: 205 }}
           source={require('@/assets/images/logo.png')}
         />
         <Text style={{ fontSize: 24 }}>healthy lifestyle</Text>
