@@ -1,9 +1,11 @@
+import burgerMenuSlice from '@/shared/slices/burgerMenuSlice';
 import favoriteArticlesSlice from '@/shared/slices/favoriteArticlesSlice';
 import { configureStore } from '@reduxjs/toolkit';
 
 const store = configureStore({
   reducer: {
     favoriteArticles: favoriteArticlesSlice,
+    burgerMenu: burgerMenuSlice,
   },
 });
 

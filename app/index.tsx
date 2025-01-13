@@ -1,10 +1,25 @@
+import { ArticleList, BurgerMenu, ButtonList, Footer, Header, StuffList } from '@/components';
 import React from 'react';
-import { Text } from 'react-native';
+import { ScrollView } from 'react-native';
+import { useSelector } from 'react-redux';
+import { RootState } from './store';
 
-export default function UserPage() {
+export default function HomePage() {
+  const menuOpen = useSelector((state: RootState) => state.burgerMenu);
+
   return (
-    <>
-      <Text>Hello</Text>
-    </>
+    <ScrollView className="flex-1 bg-white" scrollEnabled={!menuOpen}>
+      <BurgerMenu />
+      {/* Header */}
+      <Header />
+      {/* Sections */}
+      <ButtonList />
+      {/* Stuff */}
+      <StuffList />
+      {/* Articles */}
+      <ArticleList />
+      {/* Footer */}
+      <Footer />
+    </ScrollView>
   );
 }

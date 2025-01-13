@@ -1,29 +1,39 @@
-import clsx from 'clsx';
-import { router } from 'expo-router';
-import { FC, ReactNode } from 'react';
-import { Text, TouchableOpacity, View } from 'react-native';
+import { openMenu } from '@/shared/slices/burgerMenuSlice';
+import { Ionicons } from '@expo/vector-icons';
+import { FC } from 'react';
+import { Image, Text, TouchableOpacity, View } from 'react-native';
+import { useDispatch } from 'react-redux';
+import { Wrapper } from '../Wrapper';
 
-type HeaderTypes = {
-  title: string;
-  icon: ReactNode;
-  link: string;
-  classNames?: string;
-};
-
-export const Header: FC<HeaderTypes> = ({ title, icon, link, classNames }) => {
-  const handlePress = () => {
-    router.navigate(link);
-  };
+export const Header: FC = () => {
+  const dispatch = useDispatch();
 
   return (
-    <View className={clsx('w-full flex flex-row justify-between items-center', classNames)}>
-      <TouchableOpacity
-        onPress={handlePress}
-        className="flex justify-center items-center border-[1px] border-[#CFD8DB] w-12 h-12 rounded-[3px]"
-      >
-        {icon}
-      </TouchableOpacity>
-      <Text className="text-[#37464F] text-2xl font-[700]">{title}</Text>
-    </View>
+    <Wrapper>
+      <View style={{ marginBottom: 35 }}>
+        <Image
+          style={{ position: 'relative', top: 10, left: 205 }}
+          source={require('@/assets/images/logo.png')}
+        />
+        <Text style={{ fontSize: 24 }}>healthy lifestyle</Text>
+        <Text style={{ fontSize: 16, marginLeft: 56 }}>
+          {'путеводитель по здоровью,\nпитанию и спорту'}
+        </Text>
+        <View
+          style={{
+            width: 320,
+            flexDirection: 'row',
+            justifyContent: 'space-between',
+            marginTop: 6,
+          }}
+        >
+          <Text style={{ opacity: 0 }}>Breadcrumbs</Text>
+          {/* Кнопка бургер */}
+          <TouchableOpacity onPress={() => dispatch(openMenu())}>
+            <Ionicons name="menu" size={32} color="black" />
+          </TouchableOpacity>
+        </View>
+      </View>
+    </Wrapper>
   );
 };
