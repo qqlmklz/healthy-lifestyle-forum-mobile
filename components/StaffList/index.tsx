@@ -28,7 +28,7 @@ export const StaffList: FC = () => {
           {staff.map((employee) => (
             <StaffButton
               key={employee.id}
-              handlePress={() => {}}
+              employeeId={employee.id}
               name={employee.name}
               photo={employee.photo}
             />

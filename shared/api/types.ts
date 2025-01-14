@@ -1,5 +1,5 @@
 type Article = {
-  id: number;
+  id: string;
   title: string;
   subtitle: string;
   photo: {
@@ -10,9 +10,11 @@ type Article = {
 };
 
 type Employee = {
-  id: number;
+  id: string;
   name: string;
   photo: string;
+  role?: string;
+  desc?: string;
 };
 
 type Articles = Article[];

@@ -7,6 +7,7 @@ export const ApiInstance = axios.create({
 const appBlock = {
   getAllArticles: () => ApiInstance.get(`/articles/`),
   getStaff: () => ApiInstance.get(`/staff/`),
+  getEmployee: (id: string) => ApiInstance.get(`/staff/${id}`),
 };
 
 export const API = {

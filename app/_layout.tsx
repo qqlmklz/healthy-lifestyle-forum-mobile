@@ -31,6 +31,8 @@ export default function RootLayout() {
       <Stack>
         {/* Home screen */}
         <Stack.Screen name="index" options={{ headerShown: false }} />
+        {/* Employee screen */}
+        <Stack.Screen name="employee/[id]" options={{ headerShown: false }} />
         {/* Not Found */}
         <Stack.Screen name="+not-found" />
       </Stack>

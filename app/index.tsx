@@ -11,7 +11,7 @@ export default function HomePage() {
     <ScrollView className="flex-1 bg-white" scrollEnabled={!menuOpen}>
       <BurgerMenu />
       {/* Header */}
-      <Header />
+      <Header size="xl" />
       {/* Sections */}
       <ButtonList />
       {/* Staff */}
