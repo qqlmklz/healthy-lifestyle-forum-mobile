@@ -6,6 +6,6 @@ export { ButtonList } from './ButtonList';
 export { Footer } from './Footer';
 export { Header } from './Header';
 export { Icons } from './Icons';
-export { StuffButton } from './StuffButton';
-export { StuffList } from './StuffList';
+export { StaffButton } from './StaffButton';
+export { StaffList } from './StaffList';
 export { Title } from './Title';

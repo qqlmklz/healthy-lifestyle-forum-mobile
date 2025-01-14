@@ -1,0 +1,29 @@
+{
+  "articles": [
+    {
+      "id": 1,
+      "title": "Клуб 31 мая",
+      "subtitle": "Клуб никотиновой НЕзависимости",
+      "photo": {
+        "source": "http://192.168.1.197:3000/images/articles/image1.png",
+        "width": 209,
+        "height": 147
+      }
+    },
+    {
+      "id": 2,
+      "title": "НЕзависимость",
+      "subtitle": "Как преодолеть алкогольную или наркотическую зависимость",
+      "photo": {
+        "source": "http://192.168.1.197:3000/images/articles/image2.png",
+        "width": 108,
+        "height": 138
+      }
+    }
+  ],
+  "staff": [
+    { "id": 1, "name": "Тренер", "photo": "http://192.168.1.197:3000/images/staff/image1.png" },
+    { "id": 2, "name": "Тренер", "photo": "http://192.168.1.197:3000/images/staff/image2.png" },
+    { "id": 3, "name": "Тренер", "photo": "http://192.168.1.197:3000/images/staff/image3.png" }
+  ]
+}
