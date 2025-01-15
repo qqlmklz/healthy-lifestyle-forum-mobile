@@ -1,19 +1,32 @@
 import { ArticlePreview, Footer, Header, Title } from '@/components';
 import { Wrapper } from '@/components/Wrapper';
 import { API } from '@/shared/api';
+import { useAppDispatch } from '@/shared/hooks/useAppDispatch';
+import { useAppSelector } from '@/shared/hooks/useAppSelector';
+import { handleSaveArticles } from '@/shared/slices/favoritesArticlesSlice';
 import { Link } from 'expo-router';
 import { useEffect, useState } from 'react';
 import { Image, ScrollView, Text, View } from 'react-native';
+import { RootState } from '../store';
 
 export default function FavoritesPage() {
   const [favorites, setFavorites] = useState<Favorites>([]);
+  const dispatch = useAppDispatch();
+  const favoriteArticles = useAppSelector(
+    (state: RootState) => state.favoritesArticles.favoritesArticles,
+  );
 
   const fetchFavoritesArticles = async () => {
-    try {
-      const response = await API.appBlock.getAllFavorites();
-      setFavorites(response.data);
-    } catch (error) {
-      console.error('Error fetching employee:', error);
+    if (favoriteArticles.length === 0) {
+      try {
+        const response = await API.appBlock.getAllFavorites();
+        setFavorites(response.data);
+        dispatch(handleSaveArticles({ articles: response.data }));
+      } catch (error) {
+        console.error('Error fetching employee:', error);
+      }
+    } else {
+      return setFavorites(favoriteArticles);
     }
   };
 

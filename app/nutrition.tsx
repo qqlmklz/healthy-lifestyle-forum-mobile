@@ -1,13 +1,13 @@
 import { Footer, Header } from '@/components';
 import { Wrapper } from '@/components/Wrapper';
+import { useAppSelector } from '@/shared/hooks/useAppSelector';
 import { Link } from 'expo-router';
 import React from 'react';
 import { Image, ScrollView, Text, TouchableOpacity, View } from 'react-native';
-import { useSelector } from 'react-redux';
 import { RootState } from './store';
 
 export default function NutritionPage() {
-  const menuOpen = useSelector((state: RootState) => state.burgerMenu);
+  const menuOpen = useAppSelector((state: RootState) => state.burgerMenu);
 
   return (
     <ScrollView className="flex-1 bg-white">

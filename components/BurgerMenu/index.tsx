@@ -1,14 +1,15 @@
 import { RootState } from '@/app/store';
+import { useAppDispatch } from '@/shared/hooks/useAppDispatch';
+import { useAppSelector } from '@/shared/hooks/useAppSelector';
 import { closeMenu } from '@/shared/slices/burgerMenuSlice';
 import { Ionicons } from '@expo/vector-icons';
 import { Link } from 'expo-router';
 import React, { useEffect, useRef } from 'react';
 import { Animated, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
-import { useDispatch, useSelector } from 'react-redux';
 
 export const BurgerMenu: React.FC = () => {
-  const menuOpen = useSelector((state: RootState) => state.burgerMenu);
-  const dispatch = useDispatch();
+  const menuOpen = useAppSelector((state: RootState) => state.burgerMenu);
+  const dispatch = useAppDispatch();
   const animation = useRef(new Animated.Value(0)).current;
 
   // Эффект для запуска анимации при изменении состояния меню
