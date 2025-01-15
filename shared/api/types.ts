@@ -2,6 +2,11 @@ type Article = {
   id: string;
   title: string;
   subtitle: string;
+  content: {
+    subtitle: string;
+    description: string;
+  }[];
+  tags?: string;
   photo: {
     source: string;
     width: number;

@@ -34,7 +34,8 @@ export default function RootLayout() {
         {/* Employee screen */}
         <Stack.Screen name="employee/[id]" options={{ headerShown: false }} />
         {/* favorites screen */}
-        <Stack.Screen name="favorites" options={{ headerShown: false }} />
+        <Stack.Screen name="favorites/index" options={{ headerShown: false }} />
+        <Stack.Screen name="favorites/[id]" options={{ headerShown: false }} />
         {/* Not Found */}
         <Stack.Screen name="+not-found" />
       </Stack>

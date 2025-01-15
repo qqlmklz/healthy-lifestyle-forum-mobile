@@ -38,7 +38,12 @@ export default function FavoritesPage() {
           {/* Content */}
           <Title>Избранное</Title>
           {favorites.map((item) => (
-            <ArticlePreview key={item.id} title={item.title} photo={item.photo} />
+            <ArticlePreview
+              key={item.id}
+              articleId={item.id}
+              title={item.title}
+              photo={item.photo}
+            />
           ))}
         </Wrapper>
         <Footer />
