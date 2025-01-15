@@ -17,5 +17,16 @@ type Employee = {
   desc?: string;
 };
 
+type Favorite = {
+  id: string;
+  title: string;
+  photo: {
+    source: string;
+    width: number;
+    height: number;
+  };
+};
+
 type Articles = Article[];
 type Staff = Employee[];
+type FavoriteArr = Favorite[];

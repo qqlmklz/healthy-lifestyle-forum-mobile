@@ -1,6 +1,7 @@
 import { RootState } from '@/app/store';
 import { closeMenu } from '@/shared/slices/burgerMenuSlice';
 import { Ionicons } from '@expo/vector-icons';
+import { Link } from 'expo-router';
 import React, { useEffect, useRef } from 'react';
 import { Animated, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
@@ -32,8 +33,9 @@ export const BurgerMenu: React.FC = () => {
           <Ionicons name="close" size={50} color="#000" />
         </TouchableOpacity>
         <View className="px-[80px]">
-          <Text className="text-[18px] text-[#000000] my-[10px]">Вход / Регистрация</Text>
-          <Text className="text-[18px] text-[#000000] my-[10px]">Избранное</Text>
+          <Link href={{ pathname: 'favorite' }} asChild onPress={() => dispatch(closeMenu())}>
+            <Text className="text-[18px] text-[#000000] my-[10px]">Избранное</Text>
+          </Link>
           <Text className="text-[18px] text-[#000000] my-[10px]">Спорт</Text>
           <Text className="text-[18px] text-[#000000] my-[10px]">Здоровье</Text>
           <Text className="text-[18px] text-[#000000] my-[10px]">Питание</Text>
