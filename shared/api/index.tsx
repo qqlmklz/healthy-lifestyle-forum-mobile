@@ -10,9 +10,9 @@ const appBlock = {
   // Staff
   getStaff: () => ApiInstance.get(`/staff/`),
   getEmployee: (id: string) => ApiInstance.get(`/staff/${id}`),
-  // Favorite
-  getAllFavorite: () => ApiInstance.get(`/favorite`),
-  getFavorite: (id: string) => ApiInstance.get(`/favorite/${id}`),
+  // Favorites
+  getAllFavorites: () => ApiInstance.get(`/favorites`),
+  getFavorites: (id: string) => ApiInstance.get(`/favorites/${id}`),
 };
 
 export const API = {

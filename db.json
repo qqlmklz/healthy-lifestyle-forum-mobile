@@ -44,12 +44,12 @@
       "photo": "http://192.168.1.197:3000/images/staff/image3.png"
     }
   ],
-  "favorite": [
+  "favorites": [
     {
       "id": "1",
       "title": "Как сохранить психическое здоровье?",
       "photo": {
-        "source": "http://192.168.1.197:3000/images/favorite/image1.png",
+        "source": "http://192.168.1.197:3000/images/favorites/image1.png",
         "width": 278,
         "height": 148
       }
@@ -58,7 +58,7 @@
       "id": "2",
       "title": "О последствии курения",
       "photo": {
-        "source": "http://192.168.1.197:3000/images/favorite/image2.png",
+        "source": "http://192.168.1.197:3000/images/favorites/image2.png",
         "width": 278,
         "height": 148
       }
@@ -67,7 +67,7 @@
       "id": "3",
       "title": "Здоровое питание: основные правила",
       "photo": {
-        "source": "http://192.168.1.197:3000/images/favorite/image3.png",
+        "source": "http://192.168.1.197:3000/images/favorites/image3.png",
         "width": 278,
         "height": 148
       }

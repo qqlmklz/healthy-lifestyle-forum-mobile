@@ -29,4 +29,4 @@ type Favorite = {
 
 type Articles = Article[];
 type Staff = Employee[];
-type FavoriteArr = Favorite[];
+type Favorites = Favorite[];

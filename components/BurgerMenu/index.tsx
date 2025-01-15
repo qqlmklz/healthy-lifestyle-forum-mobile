@@ -33,7 +33,7 @@ export const BurgerMenu: React.FC = () => {
           <Ionicons name="close" size={50} color="#000" />
         </TouchableOpacity>
         <View className="px-[80px]">
-          <Link href={{ pathname: 'favorite' }} asChild onPress={() => dispatch(closeMenu())}>
+          <Link href={{ pathname: 'favorites' }} asChild onPress={() => dispatch(closeMenu())}>
             <Text className="text-[18px] text-[#000000] my-[10px]">Избранное</Text>
           </Link>
           <Text className="text-[18px] text-[#000000] my-[10px]">Спорт</Text>

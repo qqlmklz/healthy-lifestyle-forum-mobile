@@ -5,20 +5,20 @@ import { Link } from 'expo-router';
 import { useEffect, useState } from 'react';
 import { Image, ScrollView, Text, View } from 'react-native';
 
-export default function FavoritePage() {
-  const [favorite, setFavorite] = useState<FavoriteArr>([]);
+export default function FavoritesPage() {
+  const [favorites, setFavorites] = useState<Favorites>([]);
 
-  const fetchFavoriteArticles = async () => {
+  const fetchFavoritesArticles = async () => {
     try {
-      const response = await API.appBlock.getAllFavorite();
-      setFavorite(response.data);
+      const response = await API.appBlock.getAllFavorites();
+      setFavorites(response.data);
     } catch (error) {
       console.error('Error fetching employee:', error);
     }
   };
 
   useEffect(() => {
-    fetchFavoriteArticles();
+    fetchFavoritesArticles();
   }, []);
 
   return (
@@ -37,7 +37,7 @@ export default function FavoritePage() {
           </Link>
           {/* Content */}
           <Title>Избранное</Title>
-          {favorite.map((item) => (
+          {favorites.map((item) => (
             <ArticlePreview key={item.id} title={item.title} photo={item.photo} />
           ))}
         </Wrapper>
