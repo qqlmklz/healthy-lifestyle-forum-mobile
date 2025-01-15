@@ -40,7 +40,9 @@ export const BurgerMenu: React.FC = () => {
             <Text className="text-[18px] text-[#000000] my-[10px]">Спорт</Text>
           </Link>
           <Text className="text-[18px] text-[#000000] my-[10px]">Здоровье</Text>
-          <Text className="text-[18px] text-[#000000] my-[10px]">Питание</Text>
+          <Link href={{ pathname: 'nutrition' }} asChild onPress={() => dispatch(closeMenu())}>
+            <Text className="text-[18px] text-[#000000] my-[10px]">Питание</Text>
+          </Link>
           <Text className="text-[18px] text-[#000000] my-[10px]">Акции</Text>
           <Text className="text-[18px] text-[#000000] my-[10px]">Статьи</Text>
           <Text className="text-[18px] text-[#000000] my-[10px]">Опросы</Text>

@@ -38,6 +38,8 @@ export default function RootLayout() {
         <Stack.Screen name="favorites/[id]" options={{ headerShown: false }} />
         {/* Sport screen */}
         <Stack.Screen name="sport" options={{ headerShown: false }} />
+        {/* Nutrition screen */}
+        <Stack.Screen name="nutrition" options={{ headerShown: false }} />
         {/* Not Found */}
         <Stack.Screen name="+not-found" />
       </Stack>
