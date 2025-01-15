@@ -21,7 +21,7 @@ export const ButtonList: FC = () => {
           <Text className="text-2xl font-medium">Питание</Text>
         </TouchableOpacity>
       </Link>
-      <Link href={{ pathname: '' }} asChild>
+      <Link href={{ pathname: 'health' }} asChild>
         <TouchableOpacity
           className="w-[180px] flex justify-center items-center py-[20px] mb-[30px] rounded-[30px]"
           style={{ backgroundColor: '#70A1D7' }}

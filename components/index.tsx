@@ -2,7 +2,6 @@ export { Article } from './Article';
 export { ArticleList } from './ArticleList';
 export { ArticlePreview } from './ArticlePreview';
 export { BurgerMenu } from './BurgerMenu';
-export { Button } from './Button';
 export { ButtonList } from './ButtonList';
 export { Footer } from './Footer';
 export { Header } from './Header';

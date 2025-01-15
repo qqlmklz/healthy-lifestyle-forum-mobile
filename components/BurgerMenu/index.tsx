@@ -39,7 +39,9 @@ export const BurgerMenu: React.FC = () => {
           <Link href={{ pathname: 'sport' }} asChild onPress={() => dispatch(closeMenu())}>
             <Text className="text-[18px] text-[#000000] my-[10px]">Спорт</Text>
           </Link>
-          <Text className="text-[18px] text-[#000000] my-[10px]">Здоровье</Text>
+          <Link href={{ pathname: 'health' }} asChild onPress={() => dispatch(closeMenu())}>
+            <Text className="text-[18px] text-[#000000] my-[10px]">Здоровье</Text>
+          </Link>
           <Link href={{ pathname: 'nutrition' }} asChild onPress={() => dispatch(closeMenu())}>
             <Text className="text-[18px] text-[#000000] my-[10px]">Питание</Text>
           </Link>
