@@ -1,5 +1,6 @@
+import { formatDate } from '@/scripts/helpers';
 import { FC } from 'react';
-import { Image, Text, View } from 'react-native';
+import { Image, StyleSheet, Text, View } from 'react-native';
 
 type ArticleProps = {
   title: string;
@@ -12,21 +13,47 @@ type ArticleProps = {
 };
 
 export const Article: FC<ArticleProps> = ({ title, subtitle, photo }) => {
-  // Определяем источник изображения
   const imageSource =
     photo.source.startsWith('http') || photo.source.startsWith('/')
       ? { uri: photo.source }
       : require('@/assets/images/example.png');
 
   return (
-    <View className="px-6 py-7 border-[1px] border-[#000000] rounded-[30px] mb-10">
-      <Text className="font-bold text-[24px]">{title}</Text>
-      <Text className="font-bold text-[13px] text-[#6F6F6F]">{subtitle}</Text>
+    <View style={styles.container}>
+      <Text style={styles.title}>{title}</Text>
+      <Text style={styles.subtitle}>{subtitle}</Text>
       <Image
+        testID="article-image"
         source={imageSource}
-        style={{ width: photo.width, height: photo.height }}
-        className="flex self-end mt-6"
+        style={{
+          width: photo.width,
+          height: photo.height,
+          display: 'flex',
+          alignSelf: 'flex-end',
+          marginTop: 24,
+        }}
       />
+      <Text className="text-[10px] mt-2 text-right">{formatDate('2025-01-01T14:30:00Z')}</Text>
     </View>
   );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    paddingHorizontal: 24,
+    paddingVertical: 28,
+    borderWidth: 1,
+    borderColor: '#000000',
+    borderRadius: 30,
+    marginBottom: 40,
+  },
+  title: {
+    fontWeight: 'bold',
+    fontSize: 24,
+  },
+  subtitle: {
+    fontWeight: 'bold',
+    fontSize: 13,
+    color: '#6F6F6F',
+  },
+});
