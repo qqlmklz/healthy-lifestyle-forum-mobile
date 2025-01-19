@@ -1,4 +1,5 @@
 import store from '@/app/store';
+import { LayoutWithMenu } from '@/components/LayoutWithMenu';
 import { useFonts } from 'expo-font';
 import { Stack } from 'expo-router';
 import * as SplashScreen from 'expo-splash-screen';
@@ -28,27 +29,29 @@ export default function RootLayout() {
 
   return (
     <Provider store={store}>
-      <Stack>
-        {/* Home screen */}
-        <Stack.Screen name="index" options={{ headerShown: false }} />
-        {/* Employee screen */}
-        <Stack.Screen name="employee/[id]" options={{ headerShown: false }} />
-        {/* favorites screen */}
-        <Stack.Screen name="favorites/index" options={{ headerShown: false }} />
-        <Stack.Screen name="favorites/[id]" options={{ headerShown: false }} />
-        {/* Sport screen */}
-        <Stack.Screen name="sport" options={{ headerShown: false }} />
-        {/* Nutrition screen */}
-        <Stack.Screen name="nutrition" options={{ headerShown: false }} />
-        {/* Health screen */}
-        <Stack.Screen name="health" options={{ headerShown: false }} />
-        {/* Stock screen */}
-        <Stack.Screen name="stock" options={{ headerShown: false }} />
-        {/* About screen */}
-        <Stack.Screen name="about" options={{ headerShown: false }} />
-        {/* Not Found */}
-        <Stack.Screen name="+not-found" />
-      </Stack>
+      <LayoutWithMenu>
+        <Stack>
+          {/* Home screen */}
+          <Stack.Screen name="index" options={{ headerShown: false }} />
+          {/* Employee screen */}
+          <Stack.Screen name="employee/[id]" options={{ headerShown: false }} />
+          {/* Favorites screen */}
+          <Stack.Screen name="favorites/index" options={{ headerShown: false }} />
+          <Stack.Screen name="favorites/[id]" options={{ headerShown: false }} />
+          {/* Sport screen */}
+          <Stack.Screen name="sport" options={{ headerShown: false }} />
+          {/* Nutrition screen */}
+          <Stack.Screen name="nutrition" options={{ headerShown: false }} />
+          {/* Health screen */}
+          <Stack.Screen name="health" options={{ headerShown: false }} />
+          {/* Stock screen */}
+          <Stack.Screen name="stock" options={{ headerShown: false }} />
+          {/* About screen */}
+          <Stack.Screen name="about" options={{ headerShown: false }} />
+          {/* Not Found */}
+          <Stack.Screen name="+not-found" />
+        </Stack>
+      </LayoutWithMenu>
     </Provider>
   );
 }

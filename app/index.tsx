@@ -1,4 +1,4 @@
-import { ArticleList, BurgerMenu, ButtonList, Footer, Header, StaffList } from '@/components';
+import { ArticleList, ButtonList, Footer, Header, StaffList } from '@/components';
 import { useAppSelector } from '@/shared/hooks/useAppSelector';
 import React from 'react';
 import { ScrollView } from 'react-native';
@@ -9,7 +9,6 @@ export default function HomePage() {
 
   return (
     <ScrollView className="flex-1 bg-white" scrollEnabled={!menuOpen}>
-      <BurgerMenu />
       {/* Header */}
       <Header size="xl" />
       {/* Sections */}
